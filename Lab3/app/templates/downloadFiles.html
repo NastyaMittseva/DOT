@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p align="center" style="color:#000000; font-size:28px">Сортировка файла</p>
+    <p align="right"><a href="{{ url_for('back') }}">Назад</a></p>
+    <center>
+        {% if args["method"] == "POST" %}
+            <p>Данные отсортированы</p>
+            <form action="/downloadFile" method="GET">
+                <button type="submit">Сохранить файл</button>
+            </form>
+        {% endif%}
+    </center>
+{% endblock %}

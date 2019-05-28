@@ -1,0 +1,6 @@
+~$*.xls*
+*.xlsx
+*.xls
+*.txt
+Lab3/app/__pycache__
+Lab3/.idea

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p align="center" style="color:#000000; font-size:28px">Сортировка файла</p>
+
+    <form action="/top" method="POST" enctype="multipart/form-data">
+        <center>
+            <input type="file" name="file" id="file_id">
+            <p><b>Field: </b><br><input type="text" name="field" size="20"></p>
+            <p><b>Count: </b><br><input type="text" name="count" size="20"></p>
+            <p>
+                <input type="radio" name="options" id="option1" value="simple">Простая обработка</input><br>
+                <input type="radio" name="options" id="option2" value="distr">Распределенная обработка</input><br>
+            </p>
+            <button type="submit">Загрузить</button>
+        </center>
+    </form>
+    {% if args["method"] == "POST" %}
+        <center>
+            <p>Данные отсортированы</p>
+            <form action="/downloadFile">
+                <button type="submit">Сохранить файл</button>
+            </form>
+        </center>
+    {% endif%}
+{% endblock %}

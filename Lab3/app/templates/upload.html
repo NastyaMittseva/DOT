@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p align="center" style="color:#000000; font-size:28px">Ассинхронная обработка файла</p>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <center>
+            <input type="file" name="file" id="file_id">
+            <button type="submit">Загрузить</button>
+        </center>
+    </form>
+{% endblock %}
